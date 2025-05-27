@@ -18,12 +18,18 @@ const PortfolioSection = styled.section`
   color: #222;
   padding: 4rem 0 3rem 0;
   position: relative;
+  @media (max-width: 600px) {
+    padding: 2.5rem 0.5rem 1.5rem 0.5rem;
+  }
 `;
 
 const Container = styled.div`
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  @media (max-width: 600px) {
+    padding: 0 0.5rem;
+  }
 `;
 
 const Title = styled.h2`
@@ -31,12 +37,20 @@ const Title = styled.h2`
   font-weight: 800;
   margin-bottom: 2.5rem;
   text-align: center;
+  @media (max-width: 600px) {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
 `;
 
 const CardGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 `;
 
 const Card = styled(motion.div)`
@@ -52,6 +66,9 @@ const Card = styled(motion.div)`
   &:hover {
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 8px 32px rgba(60,80,40,0.18);
+  }
+  @media (max-width: 600px) {
+    padding: 1.2rem 0.7rem 1rem 0.7rem;
   }
 `;
 

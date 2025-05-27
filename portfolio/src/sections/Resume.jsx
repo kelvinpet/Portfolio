@@ -6,6 +6,9 @@ const ResumeSection = styled.section`
   background: #f6f7f4;
   color: #222;
   padding: 4rem 0 3rem 0;
+  @media (max-width: 600px) {
+    padding: 2.5rem 0.5rem 1.5rem 0.5rem;
+  }
 `;
 
 const Container = styled(motion.div)`
@@ -13,12 +16,19 @@ const Container = styled(motion.div)`
   margin: 0 auto;
   padding: 0 1.5rem;
   text-align: center;
+  @media (max-width: 600px) {
+    padding: 0 0.5rem;
+  }
 `;
 
 const Title = styled.h2`
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
+  @media (max-width: 600px) {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const ResumeButton = styled.a`
@@ -36,6 +46,10 @@ const ResumeButton = styled.a`
   &:hover {
     background: #b7c59a;
     color: #222;
+  }
+  @media (max-width: 600px) {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
   }
 `;
 

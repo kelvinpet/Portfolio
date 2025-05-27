@@ -9,18 +9,28 @@ const ContactSection = styled.section`
   background: #fff;
   color: #222;
   padding: 4rem 0 3rem 0;
+  @media (max-width: 600px) {
+    padding: 2.5rem 0.5rem 1.5rem 0.5rem;
+  }
 `;
 
 const Container = styled(motion.div)`
   max-width: 900px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  @media (max-width: 600px) {
+    padding: 0 0.5rem;
+  }
 `;
 
 const Title = styled.h2`
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
+  @media (max-width: 600px) {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const ContactInfo = styled.div`
@@ -34,6 +44,10 @@ const SocialLinks = styled.div`
   display: flex;
   gap: 1.5rem;
   margin-bottom: 2rem;
+  @media (max-width: 600px) {
+    gap: 1rem;
+    justify-content: flex-start;
+  }
 `;
 
 const SocialIcon = styled.a`
@@ -50,6 +64,9 @@ const Form = styled.form`
   flex-direction: column;
   gap: 1rem;
   max-width: 500px;
+  @media (max-width: 600px) {
+    max-width: 100%;
+  }
 `;
 
 const Input = styled.input`
@@ -57,6 +74,10 @@ const Input = styled.input`
   border-radius: 8px;
   border: 1px solid #b7c59a;
   font-size: 1rem;
+  @media (max-width: 600px) {
+    font-size: 0.98rem;
+    padding: 0.6rem 0.7rem;
+  }
 `;
 
 const Textarea = styled.textarea`
@@ -65,6 +86,11 @@ const Textarea = styled.textarea`
   border: 1px solid #b7c59a;
   font-size: 1rem;
   min-height: 120px;
+  @media (max-width: 600px) {
+    font-size: 0.98rem;
+    padding: 0.6rem 0.7rem;
+    min-height: 80px;
+  }
 `;
 
 const Button = styled.button`
@@ -80,6 +106,10 @@ const Button = styled.button`
   &:hover {
     background: #b7c59a;
     color: #222;
+  }
+  @media (max-width: 600px) {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
   }
 `;
 

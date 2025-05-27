@@ -12,6 +12,10 @@ const HomeSection = styled.section`
   background-size: cover;
   background-position: center;
   overflow: hidden;
+  @media (max-width: 600px) {
+    padding: 2.5rem 0.5rem 1.5rem 0.5rem;
+    min-height: 90vh;
+  }
 `;
 
 const Overlay = styled.div`
@@ -45,12 +49,20 @@ const Headline = styled(motion.h1)`
   font-weight: 800;
   margin-bottom: 1rem;
   letter-spacing: 1px;
+  @media (max-width: 600px) {
+    font-size: 1.6rem;
+    margin-bottom: 0.7rem;
+  }
 `;
 
 const Subheadline = styled(motion.p)`
   font-size: 1.3rem;
   margin-bottom: 2rem;
   font-weight: 500;
+  @media (max-width: 600px) {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
 `;
 
 const ResumeButton = styled(motion.a)`
@@ -68,6 +80,10 @@ const ResumeButton = styled(motion.a)`
     background: linear-gradient(90deg, #6e7f4e 60%, #b7c59a 100%);
     color: #222;
     transform: scale(1.05);
+  }
+  @media (max-width: 600px) {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
   }
 `;
 

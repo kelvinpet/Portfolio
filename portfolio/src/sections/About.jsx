@@ -23,23 +23,37 @@ const AboutSection = styled.section`
   padding: 4rem 0 3rem 0;
   position: relative;
   overflow: hidden;
+  @media (max-width: 600px) {
+    padding: 2.5rem 0.5rem 1.5rem 0.5rem;
+  }
 `;
 
 const Container = styled(motion.div)`
   max-width: 900px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  @media (max-width: 600px) {
+    padding: 0 0.5rem;
+  }
 `;
 
 const Title = styled.h2`
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
+  @media (max-width: 600px) {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const Bio = styled.p`
   font-size: 1.1rem;
   margin-bottom: 2rem;
+  @media (max-width: 600px) {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
 `;
 
 const List = styled.ul`
@@ -49,6 +63,11 @@ const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: flex-start;
+  }
 `;
 
 const ListItem = styled.li`
@@ -57,6 +76,10 @@ const ListItem = styled.li`
   padding: 0.75rem 1.5rem;
   font-weight: 500;
   font-size: 1rem;
+  @media (max-width: 600px) {
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+  }
 `;
 
 const About = () => (
