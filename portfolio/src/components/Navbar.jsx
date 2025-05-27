@@ -39,14 +39,16 @@ const NavLinks = styled.div`
     left: 0;
     width: 100vw;
     background: rgba(246, 247, 244, 0.97);
+    backdrop-filter: blur(8px);
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-    padding: 2rem 0;
-    transition: max-height 0.3s;
+    padding: ${({ open }) => (open ? '2rem 0' : '0')};
+    transition: max-height 0.3s, padding 0.3s;
     max-height: ${({ open }) => (open ? '400px' : '0')};
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(60,80,40,0.10);
+    box-shadow: 0 8px 32px rgba(60,80,40,0.18);
+    z-index: 1200;
   }
 `;
 
@@ -134,4 +136,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;
