@@ -14,7 +14,7 @@ const WaveDivider = styled.div`
 `;
 
 const ServicesSection = styled.section`
-  background: #f6f7f4;
+  background: ${({ bgColor }) => bgColor || 'linear-gradient(135deg, #e0f7fa 0%, #80cbc4 100%)'};
   color: #222;
   padding: 4rem 0 3rem 0;
   position: relative;
@@ -100,7 +100,7 @@ const services = [
 ];
 
 const Services = () => (
-  <ServicesSection id="services">
+  <ServicesSection bgColor="linear-gradient(135deg, #e0f7fa 0%, #80cbc4 100%)" id="services">
     <Container>
       <Title>Services</Title>
       <CardGrid>

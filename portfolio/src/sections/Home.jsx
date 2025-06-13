@@ -1,164 +1,242 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-const HomeSection = styled.section`
+const HeroSection = styled.section`
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(135deg, #f6f7f4 0%,rgb(216, 245, 157) 100%);
   position: relative;
-  background: var(--color-olive-gradient), url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;
-  background-position: center;
   overflow: hidden;
-  @media (max-width: 600px) {
-    padding: 2.5rem 0.5rem 1.5rem 0.5rem;
-    min-height: 90vh;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(110,127,78,0.1) 0%, transparent 50%);
+    animation: rotate 30s linear infinite;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 `;
 
-const Overlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--color-overlay);
+const Container = styled(motion.div)`
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+  position: relative;
   z-index: 1;
 `;
 
-const FloatingShape = styled(motion.div)`
-  position: absolute;
-  z-index: 2;
-  opacity: 0.18;
+const Title = styled(motion.h1)`
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #6e7f4e 0%, #b7c59a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 `;
 
-const Content = styled(motion.div)`
-  position: relative;
-  z-index: 3;
-  text-align: center;
+const AnimatedRoles = styled(motion.span)`
+  display: inline-block;
+  font-weight: 700;
+  color: #6e7f4e;
+  font-size: 1.2em;
+  margin-bottom: 0.5rem;
+  min-height: 1.5em;
+`;
+
+const roles = [
+  'Graphic Designer',
+  'Social Media Manager',
+  'Brand Strategist',
+  'Administrative Virtual Assistant',
+  'Lead at Grafhix Digitech'
+];
+
+function useTypewriter(words, speed = 80, pause = 1200) {
+  const [index, setIndex] = useState(0);
+  const [subIndex, setSubIndex] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+
+  React.useEffect(() => {
+    if (subIndex === words[index].length + 1 && !deleting) {
+      setTimeout(() => setDeleting(true), pause);
+      return;
+    }
+    if (subIndex === 0 && deleting) {
+      setDeleting(false);
+      setIndex((prev) => (prev + 1) % words.length);
+      return;
+    }
+    const timeout = setTimeout(() => {
+      setSubIndex((prev) => prev + (deleting ? -1 : 1));
+    }, deleting ? speed / 2 : speed);
+    return () => clearTimeout(timeout);
+  }, [subIndex, index, deleting, words, speed, pause]);
+
+  return words[index].substring(0, subIndex);
+}
+
+const Subtitle = styled(motion.p)`
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+`;
+
+const CTAButton = styled(motion.a)`
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #6e7f4e 0%, #b7c59a 100%);
   color: #fff;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 24px rgba(60,80,40,0.15);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: 0.5s;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(60,80,40,0.2);
+    color: #fff;
+
+    &::before {
+      left: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+`;
+
+const ScrollIndicator = styled(motion.div)`
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
+  gap: 0.5rem;
+  color: #6e7f4e;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  cursor: pointer;
 
-const Headline = styled(motion.h1)`
-  font-size: 2.8rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  letter-spacing: 1px;
-  @media (max-width: 600px) {
-    font-size: 1.6rem;
-    margin-bottom: 0.7rem;
+  &::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid #6e7f4e;
+    border-bottom: 2px solid #6e7f4e;
+    transform: rotate(45deg);
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0) rotate(45deg);
+    }
+    40% {
+      transform: translateY(-10px) rotate(45deg);
+    }
+    60% {
+      transform: translateY(-5px) rotate(45deg);
+    }
   }
 `;
 
-const Subheadline = styled(motion.p)`
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
-  font-weight: 500;
-  @media (max-width: 600px) {
-    font-size: 1rem;
-    margin-bottom: 1.2rem;
-  }
-`;
+const Home = () => {
+  const typewriterRole = useTypewriter(roles, 80, 1200);
 
-const ResumeButton = styled(motion.a)`
-  display: inline-block;
-  padding: 0.85rem 2.2rem;
-  background: linear-gradient(90deg, #b7c59a 60%, #6e7f4e 100%);
-  color: #fff;
-  border-radius: 30px;
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 24px rgba(60,80,40,0.15);
-  transition: background 0.3s, color 0.3s, transform 0.2s;
-  &:hover {
-    background: linear-gradient(90deg, #6e7f4e 60%, #b7c59a 100%);
-    color: #222;
-    transform: scale(1.05);
-  }
-  @media (max-width: 600px) {
-    font-size: 1rem;
-    padding: 0.7rem 1.2rem;
-  }
-`;
-
-const WaveDivider = styled.div`
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  line-height: 0;
-  z-index: 4;
-`;
-
-const Home = () => (
-  <HomeSection id="home">
-    <Overlay />
-    {/* Floating SVG shapes for depth */}
-    <FloatingShape
-      initial={{ y: -40, x: -60 }}
-      animate={{ y: 0, x: 0 }}
-      transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}
-      style={{ top: 60, left: 40 }}
-    >
-      <svg width="90" height="90" viewBox="0 0 90 90" fill="none"><circle cx="45" cy="45" r="45" fill="#b7c59a" /></svg>
-    </FloatingShape>
-    <FloatingShape
-      initial={{ y: 30, x: 40 }}
-      animate={{ y: 0, x: 0 }}
-      transition={{ duration: 2.5, repeat: Infinity, repeatType: 'reverse' }}
-      style={{ bottom: 80, right: 60 }}
-    >
-      <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><rect width="60" height="60" rx="18" fill="#6e7f4e" /></svg>
-    </FloatingShape>
-    <FloatingShape
-      initial={{ y: 20, x: -30 }}
-      animate={{ y: 0, x: 0 }}
-      transition={{ duration: 3, repeat: Infinity, repeatType: 'reverse' }}
-      style={{ bottom: 30, left: 100 }}
-    >
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><ellipse cx="20" cy="20" rx="20" ry="12" fill="#fff" /></svg>
-    </FloatingShape>
-    <Content
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-    >
-      <Headline
-        initial={{ opacity: 0, y: 30 }}
+  return (
+    <HeroSection id="home">
+      <Container
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
+        transition={{ duration: 0.8 }}
       >
-        Empowering Brands Through Strategic Digital Marketing & Innovative Design
-      </Headline>
-      <Subheadline
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.8 }}
+        <Title
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          Hi, I'm Kelvin Peters
+        </Title>
+        <AnimatedRoles
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          {typewriterRole}
+          <span style={{ borderRight: '2px solid #6e7f4e', marginLeft: 2 }} />
+        </AnimatedRoles>
+        <Subtitle
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          I help brands stand out with creative design, strategic social media management, impactful brand storytelling, custom logo creation, and administrative virtual assistance.<br />
+          From eye-catching graphics to full-scale campaigns, I turn ideas into visuals that connect and convert.
+        </Subtitle>
+        <CTAButton
+          href="#contact"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Let's Collaborate
+        </CTAButton>
+      </Container>
+      <ScrollIndicator
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
+        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
       >
-        Helping businesses grow through compelling storytelling and bold visuals.
-      </Subheadline>
-      <ResumeButton
-        href="https://drive.google.com/file/d/1OguPmD9zTSSXSuyV5wq4gTyq9Pu7oTwD/view?usp=sharing"
-        target="_blank"
-        rel="noopener noreferrer"
-        whileHover={{ scale: 1.08 }}
-        whileTap={{ scale: 0.97 }}
-      >
-        Download Resume
-      </ResumeButton>
-    </Content>
-    <WaveDivider>
-      <svg viewBox="0 0 1440 120" width="100%" height="80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#f6f7f4" d="M0,32L60,37.3C120,43,240,53,360,69.3C480,85,600,107,720,112C840,117,960,107,1080,90.7C1200,75,1320,53,1380,42.7L1440,32L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z" />
-      </svg>
-    </WaveDivider>
-  </HomeSection>
-);
+        Scroll Down
+      </ScrollIndicator>
+    </HeroSection>
+  );
+};
 
 export default Home; 

@@ -6,7 +6,7 @@ import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 
 const ContactSection = styled.section`
-  background: #fff;
+  background: ${({ bgColor }) => bgColor || 'linear-gradient(135deg, #e0f7fa 0%, #b7c59a 100%)'};
   color: #222;
   padding: 4rem 0 3rem 0;
   @media (max-width: 600px) {
@@ -114,7 +114,7 @@ const Button = styled.button`
 `;
 
 const Contact = () => (
-  <ContactSection id="contact">
+  <ContactSection bgColor="linear-gradient(135deg, #e0f7fa 0%, #b7c59a 100%)" id="contact">
     <Container
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -124,7 +124,8 @@ const Contact = () => (
       <Title>Contact</Title>
       <ContactInfo>
         <span><FontAwesomeIcon icon={faEnvelope} /> peterskelvin51@gmail.com</span>
-        <span><FontAwesomeIcon icon={faPhone} /> +234 814 669 2164</span>
+        <span><FontAwesomeIcon icon={faWhatsapp} /> WhatsApp: +234 814 669 2164</span>
+        <span><FontAwesomeIcon icon={faPhone} /> Call: +234 903 691 1159</span>
       </ContactInfo>
       <SocialLinks>
         <SocialIcon href="https://www.linkedin.com/in/kelvin-peters-740b75209" target="_blank" rel="noopener noreferrer">
@@ -135,6 +136,9 @@ const Contact = () => (
         </SocialIcon>
         <SocialIcon href="https://wa.me/2348146692164" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faWhatsapp} />
+        </SocialIcon>
+        <SocialIcon href="tel:+2349036911159" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faPhone} />
         </SocialIcon>
       </SocialLinks>
       <Form action="https://formspree.io/f/mdkgqanb" method="POST">

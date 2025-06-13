@@ -18,7 +18,7 @@ const FloatingShape = styled(motion.div)`
 `;
 
 const AboutSection = styled.section`
-  background: #fff;
+  background: ${({ bgColor }) => bgColor || 'linear-gradient(135deg, #f6f7f4 0%, #e8e9e6 100%)'};
   color: #222;
   padding: 4rem 0 3rem 0;
   position: relative;
@@ -70,20 +70,37 @@ const List = styled.ul`
   }
 `;
 
-const ListItem = styled.li`
-  background: #f6f7f4;
+const ListItem = styled(motion.li)`
+  background: rgba(255,255,255,0.85);
   border-radius: 8px;
   padding: 0.75rem 1.5rem;
   font-weight: 500;
   font-size: 1rem;
+  color: #222;
+  box-shadow: 0 2px 8px rgba(60,80,40,0.04);
+  margin-bottom: 0.5rem;
   @media (max-width: 600px) {
     font-size: 0.95rem;
     padding: 0.6rem 1rem;
   }
 `;
 
+const listVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { type: 'spring', stiffness: 400, damping: 24 } },
+};
+
 const About = () => (
-  <AboutSection id="about">
+  <AboutSection bgColor="linear-gradient(135deg, #f6f7f4 0%,rgb(57, 172, 207) 100%)" id="about">
     {/* Floating SVG shapes for depth */}
     <FloatingShape
       initial={{ y: -30, x: 40 }}
@@ -109,23 +126,24 @@ const About = () => (
     >
       <Title>About Me</Title>
       <Bio>
-        I'm Kelvin Peters, a creative specialist with a Mass Communication degree from the National Open University of Nigeria. I help brands and entrepreneurs elevate their digital presence through strategic visual storytelling. Currently at Blueridge MFB, and leading Grafhix Digitech.
+        I'm Kelvin Peters, a Creative Specialist with a background in Mass Communication from the National Open University of Nigeria. I specialize in strategic visual storytelling—helping brands and entrepreneurs amplify their digital presence through compelling graphics, content, and design.<br /><br />
+        Currently working with Blueridge Microfinance Bank, I also lead Grafhix Digitech, a creative agency focused on delivering high-impact branding and digital content solutions.
       </Bio>
       <h3>Tools I Use</h3>
-      <List>
-        <ListItem>Canva</ListItem>
-        <ListItem>Adobe Photoshop</ListItem>
-        <ListItem>CapCut</ListItem>
-        <ListItem>Filmora</ListItem>
-        <ListItem>Trello</ListItem>
+      <List as={motion.ul} variants={listVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <ListItem as={motion.li} variants={itemVariants}>Canva</ListItem>
+        <ListItem as={motion.li} variants={itemVariants}>Adobe Photoshop</ListItem>
+        <ListItem as={motion.li} variants={itemVariants}>CapCut</ListItem>
+        <ListItem as={motion.li} variants={itemVariants}>Filmora</ListItem>
+        <ListItem as={motion.li} variants={itemVariants}>Trello</ListItem>
+        <ListItem as={motion.li} variants={itemVariants}>Metricool</ListItem>
       </List>
       <h3>Skills</h3>
-      <List>
-        <ListItem>Graphic Design</ListItem>
-        <ListItem>Social Media Management</ListItem>
-        <ListItem>Branding</ListItem>
-        <ListItem>SEO</ListItem>
-        <ListItem>Content Planning</ListItem>
+      <List as={motion.ul} variants={listVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <ListItem as={motion.li} variants={itemVariants}>Graphic Design</ListItem>
+        <ListItem as={motion.li} variants={itemVariants}>Social Media Management</ListItem>
+        <ListItem as={motion.li} variants={itemVariants}>Branding</ListItem>
+        <ListItem as={motion.li} variants={itemVariants}>Content Planning</ListItem>
       </List>
     </Container>
     <WaveDivider>

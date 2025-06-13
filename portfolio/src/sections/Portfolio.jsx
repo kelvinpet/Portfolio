@@ -14,7 +14,7 @@ const WaveDivider = styled.div`
 `;
 
 const PortfolioSection = styled.section`
-  background: #fff;
+  background: ${({ bgColor }) => bgColor || 'linear-gradient(135deg, #f3e5f5 0%, #ce93d8 100%)'};
   color: #222;
   padding: 4rem 0 3rem 0;
   position: relative;
@@ -191,13 +191,15 @@ const projects = [
       '/Ada johnson/4.png',
       '/Ada johnson/5.png',
       '/Ada johnson/6.png',
+      '/Ada johnson/7.png',
+      '/Ada johnson/8.png',
       '/Ada johnson/Ada business card.png',
+      '/Ada johnson/ada logo.png',
       '/Ada johnson/Brand board.png',
       '/Ada johnson/DAJ.png',
       '/Ada johnson/Dr. Ada logom.png',
-      '/Ada johnson/ada logo.png',
     ],
-    mediaType: ['image','image','image','image','image','image','image','image','image','image','image'],
+    mediaType: ['image','image','image','image','image','image','image','image','image','image','image','image','image'],
   },
   {
     icon: faSpa,
@@ -238,27 +240,87 @@ const projects = [
     mediaType: ['image','video','video'],
   },
   {
+    icon: faUniversity,
+    title: 'Brew Haven',
+    desc: 'Branding and social media graphics for a specialty coffee shop.',
+    media: [
+      '/Brew Haven/1.jpg',
+      '/Brew Haven/2.jpg',
+      '/Brew Haven/3.jpg',
+      '/Brew Haven/4.jpg',
+    ],
+    mediaType: ['image', 'image', 'image', 'image'],
+  },
+  {
     icon: faGem,
-    title: 'Grafhix Digitech',
+    title: 'Grafhix Digitech Logo Designs',
     desc: 'Crafted clean and modern brand identity visuals for tech and creative services company.',
     media: [
-      '/Grafhix Digitech/1.png',
-      '/Grafhix Digitech/2.png',
-      '/Grafhix Digitech/3.png',
-      '/Grafhix Digitech/4.png',
-      '/Grafhix Digitech/5.png',
-      '/Grafhix Digitech/6.png',
-      '/Grafhix Digitech/7.png',
-      '/Grafhix Digitech/8.png',
-      '/Grafhix Digitech/9.png',
-      '/Grafhix Digitech/10.png',
-      '/Grafhix Digitech/11.png',
-      '/Grafhix Digitech/12.png',
-      '/Grafhix Digitech/13.png',
-      '/Grafhix Digitech/14.png',
+      '/Grafhix Digitech Logo Designs/1.png',
+      '/Grafhix Digitech Logo Designs/2.png',
+      '/Grafhix Digitech Logo Designs/5.png',
+      '/Grafhix Digitech Logo Designs/6.png',
+      '/Grafhix Digitech Logo Designs/7.png',
+      '/Grafhix Digitech Logo Designs/8.png',
+      '/Grafhix Digitech Logo Designs/9.png',
+      '/Grafhix Digitech Logo Designs/10.png',
+      '/Grafhix Digitech Logo Designs/Shift.jpg',
     ],
-    mediaType: Array(14).fill('image'),
-  },  
+    mediaType: ['image','image','image','image','image','image','image','image','image'],
+  },
+  {
+    icon: faUniversity,
+    title: 'EaseMoni Loans',
+    desc: 'Promotional flyers and digital assets for EaseMoni Loans.',
+    media: [
+      '/EaseMoni Loans/1.png',
+      '/EaseMoni Loans/2.png',
+      '/EaseMoni Loans/4.png',
+      '/EaseMoni Loans/5.png',
+      '/EaseMoni Loans/6.png',
+      '/EaseMoni Loans/7.png',
+    ],
+    mediaType: ['image','image','image','image','image','image'],
+  },
+  {
+    icon: faUniversity,
+    title: 'Okash Loans',
+    desc: 'Promotional flyers and digital assets for Okash Loans.',
+    media: [
+      '/Okash Loans/1.png',
+      '/Okash Loans/2.png',
+      '/Okash Loans/3.png',
+      '/Okash Loans/4.png',
+      '/Okash Loans/5.png',
+      '/Okash Loans/6.png',
+      '/Okash Loans/7.png',
+      '/Okash Loans/14.png',
+      '/Okash Loans/17.png',
+    ],
+    mediaType: ['image','image','image','image','image','image','image','image','image'],
+  },
+  {
+    icon: faGem,
+    title: 'Rima Artistry',
+    desc: 'Creative works and branding for Rima Artistry.',
+    media: [
+      '/Rima Artistry/Rima logo.png',
+      '/Rima Artistry/Rima.mp4',
+    ],
+    mediaType: ['image', 'video'],
+  },
+  {
+    icon: faSpa,
+    title: 'Zick Lash & Brow',
+    desc: 'Branding and promotional graphics for a beauty and brow studio.',
+    media: [
+      '/Zick Lash & Brow/1.png',
+      '/Zick Lash & Brow/i am zick.mp4',
+      '/Zick Lash & Brow/zick.mp4',
+      '/Zick Lash & Brow/zick2.mp4',
+    ],
+    mediaType: ['image', 'video', 'video', 'video'],
+  },
   // Add more projects as needed
 ];
 
@@ -279,7 +341,7 @@ const Portfolio = () => {
   };
 
   return (
-    <PortfolioSection id="portfolio">
+    <PortfolioSection bgColor="linear-gradient(135deg, #f3e5f5 0%, #ce93d8 100%)" id="portfolio">
       <Container>
         <Title>Portfolio</Title>
         <CardGrid>

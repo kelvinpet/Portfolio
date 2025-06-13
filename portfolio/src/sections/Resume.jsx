@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 const ResumeSection = styled.section`
-  background: #f6f7f4;
+  background: ${({ bgColor }) => bgColor || 'linear-gradient(135deg, #e3f2fd 0%, #90caf9 100%)'};
   color: #222;
   padding: 4rem 0 3rem 0;
   @media (max-width: 600px) {
@@ -54,7 +54,7 @@ const ResumeButton = styled.a`
 `;
 
 const Resume = () => (
-  <ResumeSection id="resume">
+  <ResumeSection bgColor="linear-gradient(135deg, #e3f2fd 0%, #90caf9 100%)" id="resume">
     <Container
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
