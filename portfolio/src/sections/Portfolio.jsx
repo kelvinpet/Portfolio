@@ -337,6 +337,16 @@ const projects = [
     ],
     mediaType: ['image'],
   },
+  {
+    icon: faFileAlt,
+    title: 'Data Entry and Research for Clients',
+    desc: 'Data entry and research for clients',
+    media: [
+      '/screenshot 2/Data entry and research.png',
+      '/screenshot 2/Hospital data entry.jpg',
+    ],
+    mediaType: ['image', 'image'],
+  },
 ];
 
 const Portfolio = () => {
