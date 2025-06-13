@@ -237,29 +237,7 @@ const projects = [
     ],
     mediaType: ['image','video','video'],
   },
-  {
-    icon: faPalette,
-    title: 'Grafhix Digitech',
-    desc: 'Crafted logo designs, business cards, and brand assets for a creative digital agency.',
-    media: [
-      'https://drive.google.com/uc?export=view&id=1iKBZB6VBXWG0zOC7o20bLOdzRtJQ74u1',
-      'https://drive.google.com/uc?export=view&id=1Tze2cPsP-E5U8EqB6RSdoBjUjZMC25Wu',
-      'https://drive.google.com/uc?export=view&id=1ucOOUcT1jWuhMQeYCx_Mc_li0kLAknaH',
-      'https://drive.google.com/uc?export=view&id=154IGQNpGMjVGqIkvHwcrKUbNuN73w2eg',
-      'https://drive.google.com/uc?export=view&id=1nSaJ-hvL1v0HJi85J2WUNN-d6Tslm2IA',
-      'https://drive.google.com/uc?export=view&id=1RLBNPikTa-ZWhfGN5D_3Ozhu_YK1XmLg',
-      'https://drive.google.com/uc?export=view&id=1bqxzS64JnY2AhaJWyu0TEfusPWsaSVs-',
-      'https://drive.google.com/uc?export=view&id=19m1kF9qDapDhy_-GSH2BnpP7fzInI6uC',
-      'https://drive.google.com/uc?export=view&id=1hOoBeoc1y_Uwv18qlDkAZXVIS6dVWxHd',
-      'https://drive.google.com/uc?export=view&id=1nF7_PkOTcEmbZlASZ8W5i1gFOB_pjcYo',
-      'https://drive.google.com/uc?export=view&id=1DmnBDcEa_z7MoOXZAUqbYMyuGi0fys-K',
-      'https://drive.google.com/uc?export=view&id=1jcYXk9vM88GLXI0dqYUEkMn8q6Q4ogDI',
-      'https://drive.google.com/uc?export=view&id=16Rjz4CYA8XpcdLFcCpYfO2Gra-E1cjbH',
-      'https://drive.google.com/uc?export=view&id=1VQFPPTxaeekWNUBGBnP2VktBpz6EWwSp',
-    ],
-    mediaType: Array(14).fill('image'),
-  }
-    // Add more projects as needed
+  // Add more projects as needed
 ];
 
 const Portfolio = () => {
