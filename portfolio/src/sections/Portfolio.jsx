@@ -105,9 +105,16 @@ const GalleryButton = styled.button`
   align-items: center;
   gap: 0.5rem;
   transition: background 0.2s;
+  touch-action: manipulation;
+  z-index: 2;
   &:hover {
     background: #b7c59a;
     color: #222;
+  }
+  &:active {
+    background: #4e5e36;
+    color: #fff;
+    transform: scale(0.97);
   }
 `;
 
@@ -118,7 +125,7 @@ const LightboxOverlay = styled.div`
   width: 100vw;
   height: 100vh;
   background: rgba(34, 34, 34, 0.92);
-  z-index: 9999;
+  z-index: 99999;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -359,7 +366,7 @@ const Portfolio = () => {
               <CardTitle>{project.title}</CardTitle>
               <CardDesc>{project.desc}</CardDesc>
               {project.media.length > 0 && (
-                <GalleryButton onClick={() => openLightbox(idx)}>
+                <GalleryButton onClick={() => openLightbox(idx)} role="button" tabIndex={0}>
                   <FontAwesomeIcon icon={project.mediaType[0] === 'video' ? faPlay : faImages} />
                   View Work
                 </GalleryButton>
