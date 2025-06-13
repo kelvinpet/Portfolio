@@ -62,7 +62,6 @@ const Card = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   transition: transform 0.2s, box-shadow 0.2s;
-  cursor: pointer;
   &:hover {
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 8px 32px rgba(60,80,40,0.18);
