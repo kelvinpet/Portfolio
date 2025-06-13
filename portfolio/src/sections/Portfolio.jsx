@@ -237,6 +237,28 @@ const projects = [
     ],
     mediaType: ['image','video','video'],
   },
+  {
+    icon: faGem,
+    title: 'Grafhix Digitech',
+    desc: 'Crafted clean and modern brand identity visuals for tech and creative services company.',
+    media: [
+      '/Grafhix Digitech/1.png',
+      '/Grafhix Digitech/2.png',
+      '/Grafhix Digitech/3.png',
+      '/Grafhix Digitech/4.png',
+      '/Grafhix Digitech/5.png',
+      '/Grafhix Digitech/6.png',
+      '/Grafhix Digitech/7.png',
+      '/Grafhix Digitech/8.png',
+      '/Grafhix Digitech/9.png',
+      '/Grafhix Digitech/10.png',
+      '/Grafhix Digitech/11.png',
+      '/Grafhix Digitech/12.png',
+      '/Grafhix Digitech/13.png',
+      '/Grafhix Digitech/14.png',
+    ],
+    mediaType: Array(14).fill('image'),
+  },  
   // Add more projects as needed
 ];
 
