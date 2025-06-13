@@ -237,7 +237,60 @@ const projects = [
     ],
     mediaType: ['image','video','video'],
   },
-  // Add more projects as needed
+  {
+    icon: faGem,
+    title: 'Grafhix Digitech Logo Designs',
+    desc: 'Crafted modern, professional logo designs for various industries — combining clarity, originality, and brand identity.',
+    media: [
+      '/Grafhix Digitech Logo Designs/1.png',
+      '/Grafhix Digitech Logo Designs/2.png',
+      '/Grafhix Digitech Logo Designs/3.png',
+      '/Grafhix Digitech Logo Designs/4.png',
+      '/Grafhix Digitech Logo Designs/5.png',
+      '/Grafhix Digitech Logo Designs/6.png',
+      '/Grafhix Digitech Logo Designs/7.png',
+      '/Grafhix Digitech Logo Designs/8.png',
+      '/Grafhix Digitech Logo Designs/9.png',
+      '/Grafhix Digitech Logo Designs/10.png',
+      '/Grafhix Digitech Logo Designs/11.png',
+    ],
+    mediaType: Array(11).fill('image'),
+  },
+  {
+    icon: faSpa,
+    title: 'Zick Lash & Brow',
+    desc: 'Developed soft, feminine, and professional visuals for a lash and brow beauty brand’s Instagram promotions.',
+    media: [
+      '/Zick Lash & Brow/1.mp4',
+      '/Zick Lash & Brow/2.mp4',
+      '/Zick Lash & Brow/3.mp4',
+      '/Zick Lash & Brow/4.gif',
+    ],
+    mediaType: ['video', 'video', 'video', 'image'], // Treat GIF as image if it’s animated
+  },
+  {
+    icon: faUniversity,
+    title: 'Brew Haven (Coffee Brand)',
+    desc: 'Designed rustic, cozy coffee visuals for Brew Haven’s print ads and social campaigns.',
+    media: [
+      '/Brew Haven/1.png',
+      '/Brew Haven/2.png',
+      '/Brew Haven/3.png',
+      '/Brew Haven/4.png',
+    ],
+    mediaType: Array(4).fill('image'),
+  },
+  {
+    icon: faImages,
+    title: 'Rima Artistry (Makeup Brand)',
+    desc: 'Created engaging beauty flyers and brand visuals for makeup tutorials, promotions, and events.',
+    media: [
+      '/Rima Artistry/1.png',
+      '/Rima Artistry/2.mp4',
+    ],
+    mediaType: ['image', 'video'],
+  },
+        
 ];
 
 const Portfolio = () => {
