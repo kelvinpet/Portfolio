@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserTie, faSpa, faCar, faUniversity, faGem, faImages, faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faUserTie, faSpa, faCar, faUniversity, faGem, faImages, faPlay, faPenNib, faFileAlt } from '@fortawesome/free-solid-svg-icons';
 
 const WaveDivider = styled.div`
   position: absolute;
@@ -223,6 +223,7 @@ const projects = [
       '/Glow treats/9.png',
       '/Glow treats/10.png',
       '/Glow treats/11.png',
+      '/Glow treats/12 (2).png',
       '/Glow treats/12.png',
       '/Glow treats/13.png',
       '/Glow treats/14.png',
@@ -231,7 +232,7 @@ const projects = [
       '/Glow treats/17.png',
     ],
     mediaType: [
-      'image','image','image','image','image','image','image','image','image','image','image','image','image','image','image','image','image'
+      'image','image','image','image','image','image','image','image','image','image','image','image','image','image','image','image','image','image'
     ],
   },
   {
@@ -327,7 +328,15 @@ const projects = [
     ],
     mediaType: ['image', 'video', 'video', 'video'],
   },
-  // Add more projects as needed
+  {
+    icon: faPenNib,
+    title: 'Sharon Fitness Studio - Virtual Assistant',
+    desc: 'Managed a 30-day content calendar and workflow for Sharon Fitness Studio using Trello. Supported content planning, scheduling, and project tracking for fitness and wellness campaigns.',
+    media: [
+      '/screenshots/sharon-fitness-trello.jpeg'
+    ],
+    mediaType: ['image'],
+  },
 ];
 
 const Portfolio = () => {
