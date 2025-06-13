@@ -259,8 +259,7 @@ const projects = [
     ],
     mediaType: Array(14).fill('image'),
   }
-  
-  // Add more projects as needed
+    // Add more projects as needed
 ];
 
 const Portfolio = () => {
