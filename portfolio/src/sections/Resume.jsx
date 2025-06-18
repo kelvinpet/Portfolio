@@ -62,11 +62,11 @@ const Resume = () => (
       transition={{ duration: 0.7 }}
     >
       <Title>Resume</Title>
-      <ResumeButton href="https://drive.google.com/file/d/1OguPmD9zTSSXSuyV5wq4gTyq9Pu7oTwD/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+      <ResumeButton href="https://drive.google.com/file/d/1fDjPHW5HYqrBjY0DNOzX2y_cZJLJyOkD/view?usp=sharing" target="_blank" rel="noopener noreferrer">
         Download Resume (PDF)
       </ResumeButton>
       <div>
-        <a href="https://drive.google.com/file/d/1OguPmD9zTSSXSuyV5wq4gTyq9Pu7oTwD/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+        <a href="https://drive.google.com/file/d/1fDjPHW5HYqrBjY0DNOzX2y_cZJLJyOkD/view?usp=sharing" target="_blank" rel="noopener noreferrer">
           View Resume on Google Drive
         </a>
       </div>
